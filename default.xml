@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+<!-- define repositories -->
+<remote name="gaia" fetch="https://github.com/gasolin/"/>
+
+<!-- specify revisions sync-j means download threads number  -->
+<default sync-j="4"/>
+
+<project remote="gaia" revision="refs/heads/gaia-exp" name="gaia" path="."/>
+<project remote="gaia" revision="refs/heads/master" name="gaia-shared" path="shared"/>
+<project remote="gaia" revision="refs/heads/master" name="gaia-shared-style" path="shared/style"/>
+<project remote="gaia" revision="refs/heads/master" name="gaia-shared-style-unstable" path="shared/style_unstable"/>
+</manifest>
