@@ -3,10 +3,13 @@ gaia-repo
 
 Experiment of using repo to manage gaia directories
 
+This repository is part of initiative work to separate gaia module for reuse
+https://bugzilla.mozilla.org/show_bug.cgi?id=883711
+
 Create a dir
 
-    $ mkdir gaia
-    $ cd gaia
+    $ mkdir gaiaexp
+    $ cd gaiaexp
 
 init repo
 
