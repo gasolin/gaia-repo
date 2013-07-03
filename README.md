@@ -15,7 +15,7 @@ init repo
 
     $ repo init -u https://github.com/gasolin/gaia-repo.git
 
-init repo by branch name, ex: (not exist yet)
+or, init repo by branch name, ex: (not exist yet)
 
     $ repo init -u https://github.com/gasolin/gaia-repo.git -b v1.0.1
 
