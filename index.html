@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Manage Firefox OS Gaia modules with 'repo' command</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+	<!--
+		To apply styles to the certain slides
+		set slide ID to get needed elements
+		-->
+	<style>
+		#Cover h2 {
+			margin:30px 0 0;
+			color:#FFF;
+			text-align:center;
+			font-size:70px;
+			}
+		#Cover p {
+			margin:10px 0 0;
+			text-align:center;
+			color:#FFF;
+			font-style:italic;
+			font-size:20px;
+			}
+			#Cover p a {
+				color:#FFF;
+				}
+		#Picture h2 {
+			color:#FFF;
+			}
+		#SeeMore h2 {
+			font-size:100px
+			}
+		#SeeMore img {
+			width:0.72em;
+			height:0.72em;
+			}
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Manage Firefox OS Gaia modules with 'repo' command</h1>
+		<p>gasolin@Mozilla</p>
+	</header>
+	<section class="slide cover" id="gaiarepo"><div>
+		<h2>Manage Firefox OS Gaia modules with 'repo' command</h2>
+		<p style="color:grey">Filed in <a href="http://bugzil.la/883711" target="_blank">883711</a> by <a href="https://github.com/gasolin/">Fred Lin (gasolin)</a></p>
+		<img src="pictures/gaia/gaia_by_matkraken.jpg" alt="">
+		<!-- paint by Matkraken, http://matkraken.deviantart.com/art/GAIA-179283871 -->
+	</div></section>
+	<section class="slide"><div>
+		<h2>Outline</h2>
+		<ol>
+			<li>Why change</li>
+			<li>Organize gaia gits</li>
+			<li>Get and update gaia gits</li>
+			<li>Development Settings</li>
+		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Why Change?</h2>
+		<ol>
+			<li>Identify Reusable Components</li>
+			<li>Encourage Community Contribution</li>
+		</ol>
+		<p class="note">Separate gaia components for public reuse and encourage the community contribution.</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Why use 'repo' command?</h2>
+		<ol>
+			<li>Separate repositories in <mark>Unobstructive<mark> way</li>
+			<li>Can use current <mark>git</mark> trick or get more productive with <mark>repo</mark> command</li>
+			<li>keep friendly with device build process</li>
+		</ol>
+		<p class="note">'repo' command use a <a href="https://github.com/gasolin/gaia-repo/blob/master/default.xml" target="_blank">default.xml</a> to organize multiple gits separately from origin git.</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>How repositories get organized (proposal)</h2>
+		<ol>
+			<li>gaia-exp: origin <mark>gaia-master</mark> remove shared folder</li>
+			<li>gaia-shared: (move gaia-master <mark>shared</mark> folder and remove building block)</li>
+			<li>gaia-shared-style: <mark>shared/style</mark> (stable building block)</li>
+			<li>gaia-shared-style-unstable: <mark>shared/style-unstable</mark> (unstable building block)</li>
+		</ol>
+		<img src="pictures/gaia/gaiarepos.png" alt="">
+		<!-- plot by Fred Lin -->
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>Get gaia gits</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Setup with repo command</h2>
+		<pre>
+			get all gits from public repositories:
+			<code>$ mkdir gaiaexp && cd gaiaexp</code>
+			<code>$ repo init -u <mark>https://github.com/gasolin/gaia-repo.git</mark></code>
+			<code>$ repo sync</code>
+		</pre>
+		<p class="note">'repo' command clone and update all gits defined in  <a href="https://github.com/gasolin/gaia-repo/blob/master/default.xml" target="_blank">default.xml</a>.</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Maintain different versions</h2>
+		<ol>
+			<li>git branch on each repository (ex: git branch v1.2.0)</li>
+			<li>git branch the git-repo.git and modify the branch in <a href="https://github.com/gasolin/gaia-repo/blob/master/default.xml" target="_blank">default.xml</a><br>
+				<code>&lt;project remote="gaia" revision="refs/heads/<mark>v1.2.0</mark>" name="gaia-shared" path="shared"/&gt;</code>
+			</li>
+			<li>get different branch via <mark>repo init</mark> command:<br>
+				<code>$ repo init -u https://github.com/gasolin/gaia-repo.git -b <mark>v1.2.0</mark></code>
+			</li>
+		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Setup equivalent (without repo)</h2>
+		<pre>
+			<code>$ git clone <mark>https://github.com/gasolin/gaia.git</mark></code>
+			<code>$ cd gaia && git checkout -b master origin/gaia-exp</code>
+			<code>$ git clone 
+<mark>https://github.com/gasolin/gaia-shared.git</mark> shared</code>
+			<code>$ cd shared && git clone 
+<mark>https://github.com/gasolin/gaia-shared-style.git</mark> style</code>
+			<code>$ git clone
+<mark>https://github.com/gasolin/gaia-shared-style-unstable.git</mark>
+style-unstable</code>
+		</pre>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>Update gaia gits</h2>
+	</div></section>
+    <section class="slide"><div>
+		<h2>Update with repo command</h2>
+		<pre>
+			<code>$ repo sync</code>
+		</pre>
+		<p class="note">The <mark>repo sync</mark> command will recursively fetch and update gits to current versoin.</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Update equivalent (without repo)</h2>
+		<pre>
+			<code>$ git remote update && git merge upstream/master</code>
+			<code>$ cd shared</code>
+			<code>$ (update and merge)</code>
+			<code>$ cd style</code>
+			<code>$ (update and merge)</code>
+			<code>$ cd style-unstable</code>
+			<code>$ (update and merge)</code>
+		</pre>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>Development Settings</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Setup develop environment</h2>
+		<pre>
+			add git master branch
+			<code>$ git checkout --track -b master gaia/gaia-exp</code>
+            add b2g upstream repository
+			<code>$ git remote add upstream https://github.com/mozilla-b2g/gaia.git</code>
+			then...
+		</pre>
+	</div></section>
+    <section class="slide shout"><div>
+		<h2>$ (do whatever you familiar with!)</h2>
+	</div></section>
+
+    <section class="slide"><div>
+		<h2>Reference</h2>
+		<ol>
+			<li><a href="http://bugzil.la/883711" target="_blank">Bug 883711</a></li>
+			<li><a href="http://blog.gasolin.idv.tw/2013/05/how-to-build-your-own-repo-to-manage.html">How to build your own 'repo' to Manage project with multiple git repositories</a></li>
+		</ol>
+	</div></section>
+	<section class="slide cover" id="Picture"><div>
+		<h2>Feedback!</h2>
+		<img src="pictures/gaia/gaia_by_matkraken.jpg" alt="">
+		<!-- paint by Matkraken, http://matkraken.deviantart.com/art/GAIA-179283871 -->
+	</div></section>
+	<p class="badge"><a href="http://bugzil.la/883711">883711</a></p>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyleft 2013 gasolin©mozilla.com. -->
+</body>
+</html>
