@@ -80,7 +80,6 @@
 		<h2>How repositories get organized (proposal)</h2>
 		<ol>
 			<li>gaia-exp: origin <mark>gaia-master</mark> remove shared folder</li>
-			<li>gaia-shared: (move gaia-master <mark>shared</mark> folder and remove building block)</li>
 			<li>gaia-shared-style: <mark>shared/style</mark> (stable building block)</li>
 			<li>gaia-shared-style-unstable: <mark>shared/style-unstable</mark> (unstable building block)</li>
 		</ol>
@@ -107,19 +106,16 @@
 			<li>git branch the git-repo.git and modify the branch in <a href="https://github.com/gasolin/gaia-repo/blob/master/default.xml" target="_blank">default.xml</a><br>
 				<code>&lt;project remote="gaia" revision="refs/heads/<mark>v1.2.0</mark>" name="gaia-shared" path="shared"/&gt;</code>
 			</li>
-			<li>get different branch via <mark>repo init</mark> command:<br>
+			<!--li>get different branch via <mark>repo init</mark> command:<br>
 				<code>$ repo init -u https://github.com/gasolin/gaia-repo.git -b <mark>v1.2.0</mark></code>
-			</li>
+			</li-->
 		</ol>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Setup equivalent (without repo)</h2>
+		<h2>Cons: Setup equivalent (without repo)</h2>
 		<pre>
 			<code>$ git clone <mark>https://github.com/gasolin/gaia.git</mark></code>
 			<code>$ cd gaia && git checkout -b master origin/gaia-exp</code>
-			<code>$ git clone 
-<mark>https://github.com/gasolin/gaia-shared.git</mark> shared</code>
-			<code>$ cd shared && git clone 
 <mark>https://github.com/gasolin/gaia-shared-style.git</mark> style</code>
 			<code>$ git clone
 <mark>https://github.com/gasolin/gaia-shared-style-unstable.git</mark>
@@ -137,14 +133,12 @@ style-unstable</code>
 		<p class="note">The <mark>repo sync</mark> command will recursively fetch and update gits to current versoin.</p>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Update equivalent (without repo)</h2>
+		<h2>Cons: Update equivalent (without repo)</h2>
 		<pre>
 			<code>$ git remote update && git merge upstream/master</code>
-			<code>$ cd shared</code>
+			<code>$ cd shared/style</code>
 			<code>$ (update and merge)</code>
-			<code>$ cd style</code>
-			<code>$ (update and merge)</code>
-			<code>$ cd style-unstable</code>
+			<code>$ cd shared/style-unstable</code>
 			<code>$ (update and merge)</code>
 		</pre>
 	</div></section>
