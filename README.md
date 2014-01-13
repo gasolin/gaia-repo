@@ -6,6 +6,13 @@ Experiment of using repo to manage gaia directories
 This repository is part of initiative work to separate gaia module for reuse
 https://bugzilla.mozilla.org/show_bug.cgi?id=883711
 
+
+
+Download the Repo tool and ensure that it is executable:
+
+    $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+    $ chmod a+x ~/bin/repo
+
 Create a dir
 
     $ mkdir gaiaexp
