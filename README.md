@@ -21,10 +21,11 @@ Create a dir
 init repo
 
     $ repo init -u https://github.com/gasolin/gaia-repo.git
+    
 
 or, init repo by branch name, ex: (not exist yet)
 
-    $ repo init -u https://github.com/gasolin/gaia-repo.git -b v1.0.1
+    $ repo init -u https://github.com/gasolin/gaia-repo.git -b v1.3
 
 
 sync repo
@@ -56,7 +57,13 @@ add remote upstream server to keep update
 
     $ git remote add origin https://github.com/gasolin/gaia.git
 
+run 
+
+    $ sync start <branch name>
+
+
 ## Reference
 
 * Git and repo cheatsheet [http://source.android.com/source/developing.html#git-and-repo-cheatsheet](http://source.android.com/source/developing.html#git-and-repo-cheatsheet)
+* Using repo http://source.android.com/source/using-repo.html
 * How to build your own 'repo' to Manage project with multiple git repositories  [http://blog.gasolin.idv.tw/2013/05/how-to-build-your-own-repo-to-manage.html](http://blog.gasolin.idv.tw/2013/05/how-to-build-your-own-repo-to-manage.html)
