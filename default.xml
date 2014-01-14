@@ -2,13 +2,13 @@
 <manifest>
 
 <!-- define repositories -->
-<remote name="gaia" fetch="https://github.com/mozilla-b2g/"/>
-<remote name="personal" fetch="https://github.com/gasolin/"/>
+<remote name="upstream" fetch="https://github.com/mozilla-b2g/"/>
+<remote name="origin" fetch="https://github.com/gasolin/"/>
 
 <!-- specify revisions sync-j means download threads number  -->
 <default sync-j="4"/>
 
-<project remote="personal" revision="refs/heads/gaia-exp" name="gaia" path="."/>
+<project remote="upstream" revision="refs/heads/gaia-exp" name="gaia" path="."/>
 <!--
 <project remote="gaia" revision="refs/heads/master" name="Building-Blocks" path="shared"/>
 -->
