@@ -38,14 +38,9 @@ sync repo
 Here's howto make your own dev repo settings:
 
 1. Fork https://github.com/gasolin/gaia-repo.git
-2. edit default.xml , add a remote to your repository, ex:
+2. edit default.xml , add a remote to your fork repository, ex:
 
-     <remote name="gasolin" fetch="https://github.com/gasolin/"/>
-
-  2.1 replace `project remote="gaia"` to `project remote="<your name>"`, ex:
-
-      <project remote="gasolin" name="gaia" path="."/>
-
+     <remote name="origin" fetch="https://github.com/gasolin/"/>
 
 3. then sync the project
 
@@ -59,7 +54,7 @@ That command will download all required .git for you.
 
 add remote upstream server to keep update
 
-    $ git add remote upstream https://github.com/mozilla-b2g/gaia.git
+    $ git remote add origin https://github.com/gasolin/gaia.git
 
 ## Reference
 
