@@ -54,6 +54,13 @@ Here's howto make your own dev repo settings:
 
 That command will download all required .git for you.
 
+
+## Contribute
+
+add remote upstream server to keep update
+
+    $ git add remote upstream https://github.com/mozilla-b2g/gaia.git
+
 ## Reference
 
 * Git and repo cheatsheet [http://source.android.com/source/developing.html#git-and-repo-cheatsheet](http://source.android.com/source/developing.html#git-and-repo-cheatsheet)
