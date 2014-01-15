@@ -16,8 +16,8 @@ Download the Repo tool and ensure that it is executable:
 
 Create a dir
 
-    $ mkdir gaiaexp
-    $ cd gaiaexp
+    $ mkdir gaia
+    $ cd gaia
 
 init repo
 
