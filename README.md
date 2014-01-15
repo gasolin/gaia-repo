@@ -7,6 +7,7 @@ This repository is part of initiative work to separate gaia module for reuse
 https://bugzilla.mozilla.org/show_bug.cgi?id=883711
 
 
+## Prerequisites
 
 Download the Repo tool and ensure that it is executable:
 
@@ -21,45 +22,42 @@ Create a dir
 init repo
 
     $ repo init -u https://github.com/gasolin/gaia-repo.git
-    
 
 or, init repo by branch name, ex: (not exist yet)
 
     $ repo init -u https://github.com/gasolin/gaia-repo.git -b v1.3
 
+## First time get project
 
-sync repo
-
-    $ repo sync
-
-
-
-## For Gaia Developers
-
-Here's howto make your own dev repo settings:
-
-1. Fork https://github.com/gasolin/gaia-repo.git
-2. edit default.xml , add a remote to your fork repository, ex:
-
-     <remote name="origin" fetch="https://github.com/gasolin/"/>
-
-3. then sync the project
+run `sync repo` command to fetch all resources:
 
     $ repo sync
 
-
-That command will download all required .git for you.
-
-
-## Contribute
+The first time `repo sync` command is equivalent to `git clone`.
+At second run, `repo sync` command is equivalent to `git remote update && git rebase upstream/<branch name>` http://source.android.com/source/using-repo.html
 
 add remote upstream server to keep update
 
     $ git remote add origin https://github.com/gasolin/gaia.git
 
-run 
+## Start developing
 
-    $ sync start <branch name>
+To create a new branch to work with, use command 
+
+    $ sync start <branch name> gaia
+
+push your change to your own git
+
+git push origin <branch name>
+
+
+## misc
+
+we can use 
+
+    $ repo sync <project>
+
+to just update partial code if we've some project other then gaia.
 
 
 ## Reference
