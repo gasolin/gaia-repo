@@ -8,7 +8,7 @@
 <!-- specify revisions sync-j means download threads number  -->
 <default sync-j="4"/>
 
-<project remote="upstream" revision="refs/heads/gaia-exp" name="gaia" path="."/>
+<project remote="upstream" revision="refs/heads/master" name="gaia" path="."/>
 <!--
 <project remote="gaia" revision="refs/heads/master" name="Building-Blocks" path="shared"/>
 -->
