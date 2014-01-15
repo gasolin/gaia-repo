@@ -46,6 +46,8 @@ To create a new branch to work with, use command
 
     $ sync start <branch name> gaia
 
+which is equivalent to `git checkout -b <branch name> upstream/master`.
+
 push your change to your own git
 
     $ git push origin <branch name>
