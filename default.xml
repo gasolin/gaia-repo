@@ -3,13 +3,12 @@
 
 <!-- define repositories -->
 <remote name="upstream" fetch="https://github.com/mozilla-b2g/"/>
-<remote name="origin" fetch="https://github.com/gasolin/"/>
 
 <!-- specify revisions sync-j means download threads number  -->
 <default sync-j="4"/>
 
 <project remote="upstream" revision="refs/heads/master" name="gaia" path="."/>
 <!--
-<project remote="gaia" revision="refs/heads/master" name="Building-Blocks" path="shared"/>
+<project remote="upstream" revision="refs/heads/master" name="Building-Blocks" path="shared/style"/>
 -->
 </manifest>
