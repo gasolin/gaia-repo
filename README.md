@@ -48,8 +48,9 @@ To create a new branch to work with, use command
 
 push your change to your own git
 
-git push origin <branch name>
+    $ git push origin <branch name>
 
+Then go back to Bugzilla and do all we are already familiar with.
 
 ## misc
 
