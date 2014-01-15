@@ -34,7 +34,7 @@ run `sync repo` command to fetch all resources:
     $ repo sync
 
 The first time `repo sync` command is equivalent to `git clone`.
-At second run, `repo sync` command is equivalent to `git remote update && git rebase upstream/<branch name>` http://source.android.com/source/using-repo.html
+At second run, `repo sync` command is equivalent to `git remote update && git rebase upstream/<branch name>` (refer to http://source.android.com/source/using-repo.html)
 
 add remote upstream server to keep update
 
