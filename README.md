@@ -23,9 +23,6 @@ init repo
 
     $ repo init -u https://github.com/gasolin/gaia-repo.git
 
-or, init repo by branch name, ex: (not exist yet)
-
-    $ repo init -u https://github.com/gasolin/gaia-repo.git -b v1.3
 
 ## First time get project
 
@@ -56,7 +53,19 @@ Then go back to Bugzilla and do all we are already familiar with.
 
 ## misc
 
-we can use 
+### init a branch
+
+You can init repo by branch name, ex:
+
+    $ repo init -u https://github.com/gasolin/gaia-repo.git -b v1.3
+
+or change the default branch via command:
+
+    $ repo init -b v1.3
+
+### update specific project
+
+we can use
 
     $ repo sync <project>
 
