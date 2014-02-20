@@ -35,7 +35,13 @@ At second run, `repo sync` command is equivalent to `git remote update && git re
 
 add remote upstream server to keep update
 
+    $ git remote add origin https://github.com/mozilla-b2g/gaia.git
+
+and add your gaia origin repository to develop with
+
     $ git remote add origin https://github.com/gasolin/gaia.git
+
+Now you all set.
 
 ## Start developing
 
