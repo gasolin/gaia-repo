@@ -33,13 +33,13 @@ run `sync repo` command to fetch all resources:
 The first time `repo sync` command is equivalent to `git clone`.
 At second run, `repo sync` command is equivalent to `git remote update && git rebase upstream/<branch name>` (refer to [use repo](http://source.android.com/source/using-repo.html) )
 
-add remote upstream server to keep update
-
-    $ git remote add origin https://github.com/mozilla-b2g/gaia.git
-
 and add your gaia origin repository to develop with
 
     $ git remote add origin https://github.com/gasolin/gaia.git
+
+Or if you want keep repository update with git but without repo command, add remote upstream server with
+
+    $ git remote add upstream https://github.com/mozilla-b2g/gaia.git
 
 Now you all set.
 
