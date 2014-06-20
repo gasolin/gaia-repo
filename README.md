@@ -21,7 +21,7 @@ Create a dir
 
 init repo
 
-    $ repo init -u https://github.com/gasolin/gaia-repo.git
+    $ repo init -u git://github.com/gasolin/gaia-repo.git
 
 
 ## First time get project
